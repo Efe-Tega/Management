@@ -129,4 +129,20 @@ class CelebrityController extends Controller
         return redirect()->route('all.celeb')->with($notification);
 
     }
+
+    public function DeleteCeleb($id)
+    {
+        $celeb = Celebrity::findOrFail($id);
+        $img = 'upload/celebrity/' . $celeb->image;
+        unlink($img);
+
+        Celebrity::findOrFail($id)->delete();
+
+        $notification = array(
+            'message' => 'Celebrity Deleted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
+    }
 }

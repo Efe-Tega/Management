@@ -43,6 +43,7 @@ Route::middleware('auth')->group(function () {
         Route::post('/store/profile', 'StoreProfile')->name('store.profile');
         Route::get('/edit/celebrity/{id}', 'EditCelebrity')->name('edit.celebrity');
         Route::post('/update/celebrity', 'UpdateCeleb')->name('update.celeb');
+        Route::get('/delete/celebrity/{id}', 'DeleteCeleb')->name('delete.celebrity');
     });
 });
 
