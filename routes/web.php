@@ -41,6 +41,8 @@ Route::middleware('auth')->group(function () {
 
         Route::get('/profile/page', 'ProfilePage')->name('profile.page');
         Route::post('/store/profile', 'StoreProfile')->name('store.profile');
+        Route::get('/edit/celebrity/{id}', 'EditCelebrity')->name('edit.celebrity');
+        Route::post('/update/celebrity', 'UpdateCeleb')->name('update.celeb');
     });
 });
 
