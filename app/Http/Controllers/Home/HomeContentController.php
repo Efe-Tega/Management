@@ -12,21 +12,22 @@ class HomeContentController extends Controller
 {
     public function AboutContent()
     {
-        return view('admin.home.home_about');
+        $homeData = HomeContent::find(1);
+        return view('admin.home.home_about', compact('homeData'));
     }
 
     public function StoreAboutContent(Request $request)
     {
-        $id = HomeContent::find(1);
+        $store_id = $request->id;
 
         if ($request->file('about_image')) {
             $file = $request->file('about_image');
 
             $name_gen = hexdec(uniqid()) . '.' . $file->getClientOriginalExtension();
             Image::make($file)->resize(608, 552)->save('upload/home_content/' . $name_gen);
-            $save_url = 'upload/home_content' . $name_gen;
+            $save_url = 'upload/home_content/' . $name_gen;
 
-            HomeContent::findOrFail($id)->update([
+            HomeContent::findOrFail($store_id)->update([
                 'intro' => $request->intro,
                 'title' => $request->title,
                 'short_description' => $request->short_description,
@@ -40,7 +41,7 @@ class HomeContentController extends Controller
 
         } else {
 
-            HomeContent::findOrFail($id)->update([
+            HomeContent::findOrFail($store_id)->update([
                 'intro' => $request->intro,
                 'title' => $request->title,
                 'short_description' => $request->short_description,

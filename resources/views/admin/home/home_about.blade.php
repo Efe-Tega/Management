@@ -15,11 +15,14 @@
                             <form action="{{ route('store.about.content') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
 
+                                <input type="hidden" name="id" value="{{ $homeData->id }}">
+
                                 <div class="row mb-3">
                                     <label for="example-text-input" class="col-sm-2 col-form-label">Intro</label>
                                     <div class="col-sm-10">
                                         <input name="intro" class="form-control" type="text"
-                                            placeholder="Introductory Text" id="example-text-input">
+                                            placeholder="Introductory Text" id="example-text-input"
+                                            value="{{ $homeData->intro }}">
                                     </div>
                                 </div>
                                 <!-- end row -->
@@ -28,7 +31,7 @@
                                     <label for="example-text-input" class="col-sm-2 col-form-label">Title</label>
                                     <div class="col-sm-10">
                                         <input name="title" class="form-control" type="text" placeholder="About title"
-                                            id="example-text-input">
+                                            id="example-text-input" value="{{ $homeData->title }}">
                                     </div>
                                 </div>
                                 <!-- end row -->
@@ -39,7 +42,7 @@
                                     </label>
 
                                     <div class="col-sm-10">
-                                        <textarea id="elm1" name="short_description"></textarea>
+                                        <textarea id="elm1" name="short_description">{{ $homeData->short_description }}</textarea>
                                     </div>
                                 </div> <!-- end row -->
 
@@ -56,7 +59,8 @@
                                     <label for="example-text-input" class="col-sm-2 col-form-label"></label>
 
                                     <div class="col-sm-10">
-                                        <img class="rounded avatar-lg" id="showImage" src="{{ url('upload/no_image.jpg') }}"
+                                        <img class="rounded avatar-lg" id="showImage"
+                                            src="{{ !empty($homeData->about_image) ? url($homeData->about_image) : url('upload/no_image.jpg') }}"
                                             alt="Card image cap">
                                     </div>
                                 </div>
