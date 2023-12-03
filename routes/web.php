@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Home\HomeContentController;
 use App\Http\Controllers\Menu\CelebrityController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -29,11 +30,26 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+// Celebrity Routes
+
 Route::middleware('auth')->group(function () {
 
     Route::controller(CelebrityController::class)->group(function () {
         Route::get('/create/celebrity', 'CreateCelebrity')->name('create.celeb');
         Route::post('/store/celebrity', 'StoreCelebrity')->name('celeb.store');
+        Route::get('/all/celebrity', 'AllCelebrity')->name('all.celeb');
+
+        Route::get('/profile/page', 'ProfilePage')->name('profile.page');
+        Route::post('/store/profile', 'StoreProfile')->name('store.profile');
+    });
+});
+
+// Home Routes 
+
+Route::middleware(['auth'])->group(function () {
+    Route::controller(HomeContentController::class)->group(function () {
+        Route::get('/about/content', 'AboutContent')->name('content.about');
+        Route::post('/store/about/content', 'StoreAboutContent')->name('store.about.content');
     });
 });
 

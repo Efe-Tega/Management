@@ -1,5 +1,9 @@
 @extends('admin.admin_master')
 @section('admin')
+    @php
+        $rowCount = DB::table('celebrities')->count();
+    @endphp
+
     <div class="page-content">
         <div class="container-fluid">
 
@@ -28,7 +32,7 @@
                             <div class="d-flex">
                                 <div class="flex-grow-1">
                                     <p class="text-truncate font-size-14 mb-2">All Celebrity</p>
-                                    <h4 class="mb-2">1452</h4>
+                                    <h4 class="mb-2">{{ $rowCount }}</h4>
 
                                 </div>
                                 <div class="avatar-sm">

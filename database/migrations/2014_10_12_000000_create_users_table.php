@@ -18,6 +18,7 @@ return new class extends Migration {
             $table->string('number')->nullable();
             $table->text('address')->nullable();
             $table->string('site_email')->nullable();
+            $table->string('short_name')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

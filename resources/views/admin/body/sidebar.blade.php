@@ -19,7 +19,7 @@
                 </li>
 
                 <li>
-                    <a href="" class="waves-effect">
+                    <a href="{{ route('all.celeb') }}" class="waves-effect">
                         <i class="ri-team-line"></i>
                         <span>All Celebrity</span>
                     </a>
@@ -33,7 +33,7 @@
                 </li>
 
                 <li>
-                    <a href="" class=" waves-effect">
+                    <a href="{{ route('profile.page') }}" class=" waves-effect">
                         <i class="ri-file-edit-line"></i>
                         <span>Edit Profile</span>
                     </a>
@@ -46,7 +46,7 @@
                         <span>Home Content</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="#">Home About Page</a></li>
+                        <li><a href="{{ route('content.about') }}">Home About Page</a></li>
                     </ul>
                 </li>
             </ul>

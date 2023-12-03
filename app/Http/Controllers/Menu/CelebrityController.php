@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Menu;
 
-use App\Http\Controllers\Controller;
 use App\Models\Celebrity;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Foundation\Auth\User;
+use Illuminate\Support\Facades\Auth;
 
 class CelebrityController extends Controller
 {
@@ -46,5 +48,41 @@ class CelebrityController extends Controller
         );
 
         return redirect()->back()->with($notification);
+    }
+
+
+    public function AllCelebrity()
+    {
+        $celebrities = Celebrity::latest()->get();
+
+        return view('admin.menu.all_celebrity', compact('celebrities'));
+    }
+
+    public function ProfilePage()
+    {
+        $profile_id = Auth::user()->id;
+        $profileData = User::find($profile_id);
+
+        return view('admin.edit_profile', compact('profileData'));
+    }
+
+    public function StoreProfile(Request $request)
+    {
+        $profile_id = Auth::user()->id;
+        $profileData = User::findOrFail($profile_id);
+
+        $profileData->number = $request->number;
+        $profileData->address = $request->address;
+        $profileData->site_email = $request->site_email;
+        $profileData->short_name = $request->short_name;
+        $profileData->save();
+
+        $notification = array(
+            'message' => 'Profile Updated successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
+
     }
 }
