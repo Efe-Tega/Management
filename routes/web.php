@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Home\HomeContentController;
+use App\Http\Controllers\Home\HomeNavigateController;
 use App\Http\Controllers\Menu\CelebrityController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -17,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.index');
 });
 
 Route::get('/dashboard', function () {
@@ -54,6 +55,17 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/about/content', 'AboutContent')->name('content.about');
         Route::post('/store/about/content', 'StoreAboutContent')->name('store.about.content');
     });
+});
+
+
+// frontend Routes
+
+Route::controller(HomeNavigateController::class)->group(function () {
+
+    Route::get('/home', 'Home')->name('home');
+    Route::get('/about', 'About')->name('about');
+    Route::get('/celebrity/list', 'CelebrityList')->name('celebrity.list');
+    Route::get('/celebrity/details/{id}', 'CelebrityDetails')->name('celebrity.details');
 });
 
 require __DIR__ . '/auth.php';

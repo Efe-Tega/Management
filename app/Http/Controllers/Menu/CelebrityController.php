@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Menu;
 
+use App\Models\User;
 use App\Models\Celebrity;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Auth;
 
 class CelebrityController extends Controller
@@ -102,31 +102,60 @@ class CelebrityController extends Controller
             @unlink(public_path('upload/celebrity/' . $imageData->image));
             $filename = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
             $image->move(public_path('upload/celebrity'), $filename);
+
+            Celebrity::findOrFail($celeb_id)->update([
+                'name' => $request->name,
+                'short_description' => $request->short_description,
+                'occupation' => $request->occupation,
+                'known_for' => $request->known_for,
+                'booking_fee' => $request->booking_fee,
+                'born' => $request->born,
+                'years_active' => $request->years_active,
+                'image' => $filename,
+                'birthday_fee' => $request->birthday_fee,
+                'acceptance_fee' => $request->acceptance_fee,
+                'music_fee' => $request->music_fee,
+                'endorsement' => $request->endorsement,
+                'wedding_fee' => $request->wedding_fee,
+                'virtual_event' => $request->virtual_event
+            ]);
+
+            $notification = array(
+                'message' => 'Celebrity Updated with Image successfully',
+                'alert-type' => 'success'
+            );
+
+            return redirect()->route('all.celeb')->with($notification);
+        } else {
+
+            Celebrity::findOrFail($celeb_id)->update([
+                'name' => $request->name,
+                'short_description' => $request->short_description,
+                'occupation' => $request->occupation,
+                'known_for' => $request->known_for,
+                'booking_fee' => $request->booking_fee,
+                'born' => $request->born,
+                'years_active' => $request->years_active,
+
+                'birthday_fee' => $request->birthday_fee,
+                'acceptance_fee' => $request->acceptance_fee,
+                'music_fee' => $request->music_fee,
+                'endorsement' => $request->endorsement,
+                'wedding_fee' => $request->wedding_fee,
+                'virtual_event' => $request->virtual_event
+            ]);
+
+            $notification = array(
+                'message' => 'Celebrity Updated without Image successfully',
+                'alert-type' => 'success'
+            );
+
+            return redirect()->route('all.celeb')->with($notification);
         }
 
-        Celebrity::findOrFail($celeb_id)->update([
-            'name' => $request->name,
-            'short_description' => $request->short_description,
-            'occupation' => $request->occupation,
-            'known_for' => $request->known_for,
-            'booking_fee' => $request->booking_fee,
-            'born' => $request->born,
-            'years_active' => $request->years_active,
-            'image' => $filename,
-            'birthday_fee' => $request->birthday_fee,
-            'acceptance_fee' => $request->acceptance_fee,
-            'music_fee' => $request->music_fee,
-            'endorsement' => $request->endorsement,
-            'wedding_fee' => $request->wedding_fee,
-            'virtual_event' => $request->virtual_event
-        ]);
 
-        $notification = array(
-            'message' => 'Celebrity Updated successfully',
-            'alert-type' => 'success'
-        );
 
-        return redirect()->route('all.celeb')->with($notification);
+
 
     }
 

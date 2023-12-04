@@ -108,7 +108,7 @@
                                 <!-- end row -->
 
                                 <div class="row mb-3">
-                                    <label for="example-text-input" class="col-sm-2 col-form-label">Acceptance Fee</label>
+                                    <label for="example-text-input" class="col-sm-2 col-form-label">Appearance Fee</label>
                                     <div class="col-sm-10">
                                         <input name="acceptance_fee" class="form-control" type="text"
                                             placeholder="Enter amount" id="example-text-input">
