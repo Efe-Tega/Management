@@ -851,7 +851,7 @@ header.header.is-sticky {
 .header-user {
     background-color: #004395 !important;
     color: #fff !important;
-    padding: 10px 25px;
+    padding: 5px 10px;
     border-radius: 5px;
 }
 

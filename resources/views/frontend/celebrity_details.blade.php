@@ -37,7 +37,7 @@
                                 {{ $celebrity->name }}
                             </h3>
                             <p>
-                                {{ $celebrity->short_description }}
+                                {!! $celebrity->short_description !!}
                             </p>
                             <div class="row">
                                 <div class="col-md-6 col-12 mb-30">
@@ -65,27 +65,26 @@
                                     <h4 style="color: #004395;">Agency Event Price Info</h4>
                                     <ul>
                                         <li>
-                                            <span>Birthday:</span> <span>
+                                            <span>Meet and Greet:</span> <span>
                                                 {{ $celebrity->birthday_fee }}
                                             </span>
                                         </li>
-                                        <li><span>Personal Appearance:</span> <span>
+                                        <li><span>Vacation:</span> <span>
                                                 {{ $celebrity->acceptance_fee }}
                                             </span></li>
-                                        <li><span>Music Performance:</span> <span>
+                                        <li><span>VIP Card and Access:</span> <span>
                                                 {{ $celebrity->music_fee }}
                                             </span></li>
-                                        <li><span>Endoresment/Spokesperson:</span> <span>
+                                        <li><span>Endoresment:</span> <span>
                                                 {{ $celebrity->endorsement }}
                                             </span></li>
                                         <li><span>Virtual Event:</span> <span>
                                                 {{ $celebrity->virtual_event }}
                                             </span></li>
-                                        <li><span>Wedding:</span> <span>
+                                        <li><span>Event Invitation:</span> <span>
                                                 {{ $celebrity->wedding_fee }}
                                             </span></li>
                                     </ul>
-                                    <h5 class="mt-5"><b>Note:</b> All prices are also negotiable, send us an email</h5>
                                 </div>
                             </div>
                         </div>

@@ -28,13 +28,13 @@
                                 <!-- end row -->
 
                                 <div class="row mb-3">
-                                    <label for="example-text-input" class="col-sm-2 col-form-label"> Short
-                                        Description</label>
+                                    <label for="example-text-input" class="col-sm-2 col-form-label"> Description
+                                    </label>
+
                                     <div class="col-sm-10">
-                                        <textarea required name="short_description" class="form-control" rows='5'>{{ $celebData->short_description }}</textarea>
+                                        <textarea id="elm1" name="short_description">{{ $celebData->short_description }}</textarea>
                                     </div>
-                                </div>
-                                <!-- end row -->
+                                </div> <!-- end row -->
 
                                 <div class="row mb-3">
                                     <label for="example-text-input" class="col-sm-2 col-form-label">Occupation</label>
@@ -108,7 +108,7 @@
                                 <h2 class="card-title mt-5 mb-3">Agency Price Info</h2>
 
                                 <div class="row mb-3">
-                                    <label for="example-text-input" class="col-sm-2 col-form-label">Birthday Fee</label>
+                                    <label for="example-text-input" class="col-sm-2 col-form-label">Meet and Greet</label>
                                     <div class="col-sm-10">
                                         <input name="birthday_fee" class="form-control" type="text"
                                             placeholder="Enter amount" id="example-text-input"
@@ -118,7 +118,7 @@
                                 <!-- end row -->
 
                                 <div class="row mb-3">
-                                    <label for="example-text-input" class="col-sm-2 col-form-label">Acceptance Fee</label>
+                                    <label for="example-text-input" class="col-sm-2 col-form-label">Vacation</label>
                                     <div class="col-sm-10">
                                         <input name="acceptance_fee" class="form-control" type="text"
                                             placeholder="Enter amount" id="example-text-input"
@@ -128,7 +128,8 @@
                                 <!-- end row -->
 
                                 <div class="row mb-3">
-                                    <label for="example-text-input" class="col-sm-2 col-form-label">Music Fee</label>
+                                    <label for="example-text-input" class="col-sm-2 col-form-label">VIP Card and
+                                        Access</label>
                                     <div class="col-sm-10">
                                         <input name="music_fee" class="form-control" type="text"
                                             placeholder="Enter amount" id="example-text-input"
@@ -138,7 +139,7 @@
                                 <!-- end row -->
 
                                 <div class="row mb-3">
-                                    <label for="example-text-input" class="col-sm-2 col-form-label">Endorsement Fee
+                                    <label for="example-text-input" class="col-sm-2 col-form-label">Endorsement
                                         Fee</label>
                                     <div class="col-sm-10">
                                         <input name="endorsement" class="form-control" type="text"
@@ -149,7 +150,7 @@
                                 <!-- end row -->
 
                                 <div class="row mb-3">
-                                    <label for="example-text-input" class="col-sm-2 col-form-label">Wedding Fee
+                                    <label for="example-text-input" class="col-sm-2 col-form-label">Event Invitation
                                         Fee</label>
                                     <div class="col-sm-10">
                                         <input name="wedding_fee" class="form-control" type="text"

@@ -136,7 +136,6 @@ class CelebrityController extends Controller
                 'booking_fee' => $request->booking_fee,
                 'born' => $request->born,
                 'years_active' => $request->years_active,
-
                 'birthday_fee' => $request->birthday_fee,
                 'acceptance_fee' => $request->acceptance_fee,
                 'music_fee' => $request->music_fee,
