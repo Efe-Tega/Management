@@ -1,3 +1,7 @@
+@php
+    $route = Route::current()->getName();
+@endphp
+
 <!--Header section start-->
 <header class="header header-sticky">
     <div class="header-bottom menu-center">
@@ -30,16 +34,16 @@
                 <div class="col d-none d-lg-flex">
                     <nav class="main-menu">
                         <ul>
-                            <li class="active">
+                            <li class="{{ $route == 'home' ? 'active' : '' }}">
                                 <a href="{{ route('home') }}">Home</a>
                             </li>
-                            <li class="">
+                            <li class="{{ $route == 'celebrity.list' ? 'active' : '' }}">
                                 <a href="{{ route('celebrity.list') }}">Celebrity List</a>
                             </li>
-                            <li class="">
+                            <li class="{{ $route == 'about' ? 'active' : '' }}">
                                 <a href="{{ route('about') }}">About</a>
                             </li>
-                            <li class="">
+                            <li class="{{ $route == 'contact' ? 'active' : '' }}">
                                 <a href="contact-us.php">Contact</a>
                             </li>
                         </ul>

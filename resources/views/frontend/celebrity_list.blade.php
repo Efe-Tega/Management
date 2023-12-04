@@ -8,7 +8,7 @@
                     <h1 class="page-banner-title">All Celebrities</h1>
                     <ul class="page-breadcrumb">
                         <li><a href="index.php">Home</a></li>
-                        <li class="active">Here is a list of Celebrities ready for booking</li>
+                        <li class="active"> list of Celebrities ready for booking</li>
                     </ul>
                 </div>
             </div>
@@ -37,8 +37,10 @@
                                     <h3 class="title"><a href="">
                                             {{ $item->name }}
                                         </a></h3>
-                                    <span class="location">
-                                        {!! $item->short_description !!}
+                                    <span class="">
+                                        {!! Str::limit($item->short_description, 100) !!}
+                                        <span style="color:blue;"><a href="{{ route('celebrity.details', $item->id) }}">Read
+                                                More</a></span>
                                     </span>
                                 </div>
 
@@ -52,18 +54,18 @@
             </div>
 
             <!-- <div class="row mt-20">
-                                                  <div class="col">
-                                                      <ul class="page-pagination">
-                                                          <li><a href="#"><i class="fa fa-angle-left"></i> Prev</a></li>
-                                                          <li class="active"><a href="#">01</a></li>
-                                                          <li><a href="#">02</a></li>
-                                                          <li><a href="#">03</a></li>
-                                                          <li><a href="#">04</a></li>
-                                                          <li><a href="#">05</a></li>
-                                                          <li><a href="#"><i class="fa fa-angle-right"></i> Next</a></li>
-                                                      </ul>
-                                                  </div>
-                                              </div> -->
+                                                                  <div class="col">
+                                                                      <ul class="page-pagination">
+                                                                          <li><a href="#"><i class="fa fa-angle-left"></i> Prev</a></li>
+                                                                          <li class="active"><a href="#">01</a></li>
+                                                                          <li><a href="#">02</a></li>
+                                                                          <li><a href="#">03</a></li>
+                                                                          <li><a href="#">04</a></li>
+                                                                          <li><a href="#">05</a></li>
+                                                                          <li><a href="#"><i class="fa fa-angle-right"></i> Next</a></li>
+                                                                      </ul>
+                                                                  </div>
+                                                              </div> -->
 
         </div>
     </div>
