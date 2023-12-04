@@ -66,6 +66,7 @@ Route::controller(HomeNavigateController::class)->group(function () {
     Route::get('/about', 'About')->name('about');
     Route::get('/celebrity/list', 'CelebrityList')->name('celebrity.list');
     Route::get('/celebrity/details/{id}', 'CelebrityDetails')->name('celebrity.details');
+    Route::get('/contact', 'Contact')->name('contact');
 });
 
 require __DIR__ . '/auth.php';

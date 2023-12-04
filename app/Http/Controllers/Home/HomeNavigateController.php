@@ -35,4 +35,9 @@ class HomeNavigateController extends Controller
         $allCelebrity = Celebrity::latest()->get();
         return view('frontend.celebrity_list', compact('allCelebrity'));
     }
+
+    public function Contact()
+    {
+        return view('frontend.contact');
+    }
 }

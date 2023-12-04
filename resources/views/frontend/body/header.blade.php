@@ -44,7 +44,7 @@
                                 <a href="{{ route('about') }}">About</a>
                             </li>
                             <li class="{{ $route == 'contact' ? 'active' : '' }}">
-                                <a href="contact-us.php">Contact</a>
+                                <a href="{{ route('contact') }}">Contact</a>
                             </li>
                         </ul>
                     </nav>
