@@ -1,5 +1,8 @@
 @extends('frontend.main_master')
 @section('main')
+    @php
+        $contactDetails = App\Models\User::find(1);
+    @endphp
     <!--Page Banner Section start-->
     <div class="page-banner-section section">
         <div class="container">
@@ -36,7 +39,7 @@
                             <i class="pe-7s-map"></i>
                             <h4>address</h4>
                             <p>
-                                web location
+                                {{ $contactDetails->address }}
                             </p>
                         </div>
 
@@ -44,15 +47,15 @@
                             <i class="pe-7s-phone"></i>
                             <h4>Phone</h4>
                             <p><a href="#">
-                                    web number
+                                    {{ $contactDetails->number }}
                                 </a></p>
                         </div>
 
                         <div class="contact-info col-md-4 col-12 mb-30">
                             <i class="pe-7s-global"></i>
-                            <h4>Website</h4>
+                            <h4>Email</h4>
                             <p><a href="#">
-                                    web address
+                                    {{ $contactDetails->site_email }}
                                 </a></p>
                         </div>
 
