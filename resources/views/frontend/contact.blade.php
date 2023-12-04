@@ -10,7 +10,7 @@
                 <div class="col">
                     <h1 class="page-banner-title">Contact us</h1>
                     <ul class="page-breadcrumb">
-                        <li><a href="index.php">Home</a></li>
+                        <li><a href="{{ route('home') }}">Home</a></li>
                         <li class="active">Contact us</li>
                     </ul>
                 </div>

@@ -7,7 +7,7 @@
                 <div class="col">
                     <h1 class="page-banner-title">All Celebrities</h1>
                     <ul class="page-breadcrumb">
-                        <li><a href="index.php">Home</a></li>
+                        <li><a href="{{ route('home') }}">Home</a></li>
                         <li class="active"> list of Celebrities ready for booking</li>
                     </ul>
                 </div>
@@ -54,18 +54,18 @@
             </div>
 
             <!-- <div class="row mt-20">
-                                                                  <div class="col">
-                                                                      <ul class="page-pagination">
-                                                                          <li><a href="#"><i class="fa fa-angle-left"></i> Prev</a></li>
-                                                                          <li class="active"><a href="#">01</a></li>
-                                                                          <li><a href="#">02</a></li>
-                                                                          <li><a href="#">03</a></li>
-                                                                          <li><a href="#">04</a></li>
-                                                                          <li><a href="#">05</a></li>
-                                                                          <li><a href="#"><i class="fa fa-angle-right"></i> Next</a></li>
-                                                                      </ul>
-                                                                  </div>
-                                                              </div> -->
+                                                                      <div class="col">
+                                                                          <ul class="page-pagination">
+                                                                              <li><a href="#"><i class="fa fa-angle-left"></i> Prev</a></li>
+                                                                              <li class="active"><a href="#">01</a></li>
+                                                                              <li><a href="#">02</a></li>
+                                                                              <li><a href="#">03</a></li>
+                                                                              <li><a href="#">04</a></li>
+                                                                              <li><a href="#">05</a></li>
+                                                                              <li><a href="#"><i class="fa fa-angle-right"></i> Next</a></li>
+                                                                          </ul>
+                                                                      </div>
+                                                                  </div> -->
 
         </div>
     </div>
