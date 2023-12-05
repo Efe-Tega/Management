@@ -40,4 +40,9 @@ class HomeNavigateController extends Controller
     {
         return view('frontend.contact');
     }
+
+    public function Donation()
+    {
+        return view('frontend.donation');
+    }
 }

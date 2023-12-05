@@ -7,7 +7,7 @@
     <div class="header-bottom menu-center">
         <div class="container">
             <span>
-                <div class="translate" id="google_translate_element"></div>
+                {{-- <div class="translate" id="google_translate_element"></div> --}}
 
                 <script type="text/javascript">
                     function googleTranslateElementInit() {
@@ -46,6 +46,9 @@
                             <li class="{{ $route == 'contact' ? 'active' : '' }}">
                                 <a href="{{ route('contact') }}">Contact</a>
                             </li>
+                            <li class="{{ $route == 'donation' ? 'active' : '' }}">
+                                <a href="{{ route('donation') }}">Donation</a>
+                            </li>
                         </ul>
                     </nav>
                 </div>
@@ -54,8 +57,8 @@
                 <!--User start-->
                 <div class="col mr-sm-50 mr-xs-50">
                     <div class="header-user">
-                        <a href="{{ route('celebrity.list') }}" class="user-toggle"><i class="pe-7s-note"></i><span>Book
-                                Now</span></a>
+                        <a href="{{ route('donation') }}" class="user-toggle"><i class="pe-7s-note"></i><span>Donate
+                            </span></a>
                     </div>
                 </div>
                 <!--User end-->
