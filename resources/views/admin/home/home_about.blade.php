@@ -10,7 +10,7 @@
                     <div class="card">
                         <div class="card-body">
 
-                            <h4 class="card-title">Celebrity info</h4>
+                            <h4 class="card-title">Website Infomation</h4>
 
                             <form action="{{ route('store.about.content') }}" method="POST" enctype="multipart/form-data">
                                 @csrf

@@ -5,27 +5,40 @@ namespace App\Http\Controllers\Home;
 use App\Models\HomeContent;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Intervention\Image\ImageManagerStatic as Image;
 
 
-class HomeContentController extends Controller
-{
-    public function AboutContent()
-    {
+class HomeContentController extends Controller {
+
+    public function Destroy(Request $request) {
+        Auth::guard('web')->logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        $notification = array(
+            'message' => 'Logout Successful',
+            'alert-type' => 'success'
+        );
+
+        return redirect('/login')->with($notification);
+    }
+    public function AboutContent() {
         $homeData = HomeContent::find(1);
         return view('admin.home.home_about', compact('homeData'));
     }
 
-    public function StoreAboutContent(Request $request)
-    {
+    public function StoreAboutContent(Request $request) {
         $store_id = $request->id;
 
-        if ($request->file('about_image')) {
+        if($request->file('about_image')) {
             $file = $request->file('about_image');
 
-            $name_gen = hexdec(uniqid()) . '.' . $file->getClientOriginalExtension();
-            Image::make($file)->resize(608, 552)->save('upload/home_content/' . $name_gen);
-            $save_url = 'upload/home_content/' . $name_gen;
+            $name_gen = hexdec(uniqid()).'.'.$file->getClientOriginalExtension();
+            Image::make($file)->resize(608, 552)->save('upload/home_content/'.$name_gen);
+            $save_url = 'upload/home_content/'.$name_gen;
 
             HomeContent::findOrFail($store_id)->update([
                 'intro' => $request->intro,
@@ -53,6 +66,5 @@ class HomeContentController extends Controller
             return redirect()->back()->with($notification);
 
         }
-
     }
 }

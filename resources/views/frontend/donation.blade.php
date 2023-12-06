@@ -124,7 +124,7 @@
                 </div>
             </div>
 
-            <div class="text-center mb-3"><button id="myBtn" class="btn rounded">Donate now</button></div>
+            <div class="text-center mt-5"><button id="myBtn" class="btn rounded">Donate now</button></div>
 
         </div>
     </div>
@@ -202,7 +202,8 @@
                 </div>
 
             </div>
-            <div class="text-center"><button id="myBtn1" class="btn rounded">Donate now</button></div>
+            <div class="text-center" style="margin-top: 20px"><button id="myBtn1" class="btn rounded">Donate now</button>
+            </div>
 
             {{-- <h2>Simple JavaScript Modal</h2>
 
@@ -215,9 +216,10 @@
                 <!-- Modal content -->
                 <div class="modal-content">
                     <span class="close">&times;</span>
-                    <h1>Contact Management</h1>
-                    <p>management@gmail.com</p>
-
+                    <div>
+                        <h1>Contact Management</h1>
+                        <p>management@gmail.com</p>
+                    </div>
                 </div>
 
             </div>

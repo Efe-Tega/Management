@@ -3,6 +3,8 @@
 use App\Http\Controllers\Home\HomeContentController;
 use App\Http\Controllers\Home\HomeNavigateController;
 use App\Http\Controllers\Menu\CelebrityController;
+use App\Http\Controllers\Menu\DonationController;
+use App\Http\Controllers\Menu\GalleryController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -52,8 +54,29 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware(['auth'])->group(function () {
     Route::controller(HomeContentController::class)->group(function () {
+        Route::get('/page/logout', 'Destroy')->name('page.logout');
         Route::get('/about/content', 'AboutContent')->name('content.about');
         Route::post('/store/about/content', 'StoreAboutContent')->name('store.about.content');
+    });
+});
+
+// Donation Routes
+Route::middleware(['auth'])->group(function () {
+    Route::controller(DonationController::class)->group(function () {
+        Route::get('/donation/page', 'DonationPage')->name('donation.page');
+        Route::post('/store/donation', 'StoreDonation')->name('store.donation');
+    });
+});
+
+// Gallery Routes
+Route::middleware(['auth'])->group(function () {
+    Route::controller(GalleryController::class)->group(function () {
+        Route::get('/gallery/page', 'GalleryPage')->name('gallery.page');
+        Route::post('/store/gallery', 'StoreGallery')->name('store.gallery');
+        Route::get('/all/image', 'AllImage')->name('all.image');
+        Route::get('/edit/gallery/image/{id}', 'EditGalleryImage')->name('edit.gallery.image');
+        Route::post('/update/gallery/image', 'UpdateGalleryImage')->name('update.gallery.image');
+        Route::get('/delete/gallery/image/{id}', 'DeleteGalleryImage')->name('delete.gallery.image');
     });
 });
 
@@ -70,4 +93,4 @@ Route::controller(HomeNavigateController::class)->group(function () {
     Route::get("/donation", "Donation")->name('donation');
 });
 
-require __DIR__ . '/auth.php';
+require __DIR__.'/auth.php';

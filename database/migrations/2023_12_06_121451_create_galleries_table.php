@@ -9,13 +9,10 @@ return new class extends Migration {
      * Run the migrations.
      */
     public function up(): void {
-        Schema::create('donations', function (Blueprint $table) {
+        Schema::create('galleries', function (Blueprint $table) {
             $table->id();
-            $table->string('first_title')->nullable();
-            $table->string('first_desc')->nullable();
-            $table->string('header')->nullable();
-            $table->string('sec_title')->nullable();
             $table->text('image_gallery')->nullable();
+            $table->string('image_desc')->nullable();
             $table->timestamps();
         });
     }
@@ -24,6 +21,6 @@ return new class extends Migration {
      * Reverse the migrations.
      */
     public function down(): void {
-        Schema::dropIfExists('donations');
+        Schema::dropIfExists('galleries');
     }
 };

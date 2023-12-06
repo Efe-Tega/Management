@@ -45,8 +45,11 @@
                         <i class="ri-home-4-line"></i>
                         <span>Home Content</span>
                     </a>
-                    <ul class="sub-menu" aria-expanded="false">
+                    <ul class="sub-menu">
                         <li><a href="{{ route('content.about') }}">Home About Page</a></li>
+                        <li><a href="{{ route('donation.page') }}">Donation Page</a></li>
+                        <li><a href="{{ route('gallery.page') }}">Gallery Page</a></li>
+                        <li><a href="{{ route('all.image') }}">All Gallery Image</a></li>
                     </ul>
                 </li>
             </ul>
