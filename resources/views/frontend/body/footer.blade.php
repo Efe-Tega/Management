@@ -2,14 +2,16 @@
     $profile = App\Models\User::find(1);
 @endphp
 
-<footer class="footer-section section" style="background-image: url(assets/images/bg/footer-bg.jpg)">
+<footer class="footer-section section"
+    style="background-image: url({{ asset('frontend/assets/images/bg/footer-bg.jpg') }})">
     <!--Footer Top start-->
     <div class="footer-top section pt-100 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50 pb-60 pb-lg-40 pb-md-30 pb-sm-20 pb-xs-10">
         <div class="container">
             <div class="row row-25">
                 <!--Footer Widget start-->
                 <div class="footer-widget col-lg-3 col-md-6 col-12 mb-40">
-                    <img src="assets/images/logo-footer.png" alt="" width="150px" height="60px" />
+                    <img src="{{ asset('frontend/assets/images/logo-footer.png') }}" alt="" width="150px"
+                        height="100px" />
                     <p>
                         Website name's mission is to provide a best-in-class talent booking experience
                         from

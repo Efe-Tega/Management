@@ -24,8 +24,7 @@
 
                 <!--Feature Image start-->
                 <div class="col-lg-5 col-12 order-1 order-lg-2 mb-40">
-                    <div class="feature-image"><img src="{{ asset('frontend/assets/images/others/feature.jpg') }}"
-                            alt=""></div>
+                    <div class="feature-image"><img src="{{ $homeContent->about_image }}" alt=""></div>
                 </div>
                 <!--Feature Image end-->
 

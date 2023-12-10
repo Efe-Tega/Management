@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Home\HomeContentController;
 use App\Http\Controllers\Home\HomeNavigateController;
+use App\Http\Controllers\Mail\BookingFormController;
 use App\Http\Controllers\Menu\CelebrityController;
 use App\Http\Controllers\Menu\DonationController;
 use App\Http\Controllers\Menu\GalleryController;
@@ -91,6 +92,13 @@ Route::controller(HomeNavigateController::class)->group(function () {
     Route::get('/celebrity/details/{id}', 'CelebrityDetails')->name('celebrity.details');
     Route::get('/contact', 'Contact')->name('contact');
     Route::get("/donation", "Donation")->name('donation');
+    Route::get('/book', 'Book')->name('book');
+    Route::get('/test/view', 'TestView')->name('test.view');
+
 });
 
-require __DIR__.'/auth.php';
+Route::controller(BookingFormController::class)->group(function () {
+    Route::post('/post/message', 'PostMessage')->name('post.message');
+});
+
+require __DIR__ . '/auth.php';

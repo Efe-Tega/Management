@@ -1,52 +1,62 @@
-<x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
-        @csrf
+<!doctype html>
+<html lang="en">
 
-        <!-- Name -->
-        <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+<head>
+
+    <meta charset="utf-8" />
+    <title>404 Error</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesdesign" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.png') }}">
+
+    <!-- Bootstrap Css -->
+    <link href="{{ asset('backend/assets/css/bootstrap.min.css') }}" id="bootstrap-style" rel="stylesheet"
+        type="text/css" />
+    <!-- Icons Css -->
+    <link href="{{ asset('backend/assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="{{ asset('backend/assets/css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
+
+    {{-- toaster --}}
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+
+
+</head>
+
+<body class="auth-body-bg">
+    <div class="bg-overlay"></div>
+    <div class="my-5 pt-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="ex-page-content text-center">
+                                <h1>404!</h1>
+                                <h3>Sorry, page not found</h3><br>
+
+                                <a class="btn btn-info mb-5 waves-effect waves-light" href="{{ route('login') }}">Back
+                                    to
+                                    Dashboard</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
 
-        <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
+    <!-- JAVASCRIPT -->
+    <script src="{{ asset('backend/assets/libs/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/metismenu/metisMenu.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/simplebar/simplebar.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/node-waves/waves.min.js') }}"></script>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+    <script src="{{ asset('backend/assets/js/app.js') }}"></script>
 
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" />
+</body>
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
-
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
-
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
-            </a>
-
-            <x-primary-button class="ms-4">
-                {{ __('Register') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+</html>

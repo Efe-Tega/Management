@@ -1,10 +1,8 @@
 @extends('frontend.main_master')
 @section('main')
-    <style>
-
-    </style>
-
-
+    @php
+        $donationContent = App\Models\Donation::find(1);
+    @endphp
     <!--Page Banner Section start-->
     <div class="page-banner-section section">
         <div class="container">
@@ -29,7 +27,7 @@
                 <div class="row">
                     <div class="col">
                         <div class="about-content bg-white">
-                            <h3> <span> #Save Ukraine To Stop War </span></h3>
+                            <h3> <span> {{ $donationContent->first_title }} </span></h3>
                             <p>
                                 By donating, you'll help provide food, shelter and healthcare to the people of Ukraine, you
                                 also help cushion the effect of the Earthquake in Turkey and Syria's displaced families.

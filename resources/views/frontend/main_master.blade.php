@@ -10,7 +10,7 @@
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Place favicon.ico in the root directory -->
-    <link href="{{ asset('frontend/assets/images/favicon.ico') }}" type="img/x-icon" rel="shortcut icon" />
+    <link href="{{ asset('frontend/assets/images/favicon.png') }}" type="img/x-icon" rel="shortcut icon" />
     <!-- All css files are included here. -->
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/bootstrap.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/iconfont.min.css') }}" />

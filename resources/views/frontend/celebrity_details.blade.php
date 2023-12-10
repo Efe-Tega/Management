@@ -109,7 +109,9 @@
                                 <div class="tab-body">
 
                                     <!-- Client Form -->
-                                    <form action="book.php" method="POST" enctype="multipart/form-data" onclick="">
+                                    <form action="{{ route('post.message') }}" method="POST" enctype="multipart/form-data"
+                                        onclick="">
+                                        @csrf
                                         <div class="row">
                                             <input type="hidden" name="celebId" value="{{ $celebrity->id }}">
 
@@ -120,7 +122,7 @@
                                             </div>
                                             <div class="col-6 mb-30 mt-5">
                                                 <label for="property_title">Event Date</label>
-                                                <input type="date" id="property_title" name="event_date" required
+                                                <input type="date" id="property_title" name="event_date"
                                                     value="MM/DD/YYYY" placeholder="" />
                                             </div>
 
@@ -128,7 +130,7 @@
 
                                             <div class="col-md-4 col-6 mb-30">
                                                 <label>Type of Event</label>
-                                                <select name="event_type" class="nice-select" required>
+                                                <select name="event_type" class="nice-select">
                                                     <option value="">Select Event</option>
                                                     <option value="Birthday">Birthday</option>
                                                     <option value="Meet and Greet">Meet and Greet</option>
@@ -151,7 +153,7 @@
                                             <div class="col-md-4 col-6 mb-30">
                                                 <label for="property_address">Event Location</label>
                                                 <input type="text" id="property_address" name="event_location"
-                                                    placeholder="Enter Location" required />
+                                                    placeholder="Enter Location" />
                                             </div>
 
                                             <div class="col-md-4 col-12 mb-30">
@@ -164,7 +166,7 @@
 
                                             <div class="col-md-4 col-6 mb-30">
                                                 <label for="property_address">Name</label>
-                                                <input type="text" id="property_address" name="event_name"
+                                                <input type="text" id="property_address" name="client_name"
                                                     placeholder="Enter Fullname" required />
                                             </div>
 
@@ -176,7 +178,7 @@
 
                                             <div class="col-md-4 col-6 mb-30">
                                                 <label for="property_address">Email</label>
-                                                <input type="text" id="property_address" name="email"
+                                                <input type="email" id="property_address" name="email"
                                                     placeholder="example@gmail.com" required />
                                             </div>
 
@@ -188,13 +190,13 @@
 
                                             <div class="col-md-4 col-6 mb-30">
                                                 <label for="property_address">Current Address</label>
-                                                <input type="text" id="property_address" name="faddress"
+                                                <input type="text" id="property_address" name="address"
                                                     placeholder="" required />
                                             </div>
 
                                             <div class="col-md-4 col-6 mb-30">
                                                 <label for="property_address">Sex</label>
-                                                <input type="text" id="property_address" name="organisation"
+                                                <input type="text" id="property_address" name="gender"
                                                     placeholder="" required />
                                             </div>
 
@@ -206,7 +208,7 @@
 
 
                                             <div class="nav d-flex justify-content-end col-12 mb-30 pl-15 pr-15">
-                                                <button class="btn" name="submit">Submit Booking
+                                                <button type="submit" name="submit" class="btn">Submit Booking
                                                     Request</button>
                                             </div>
                                         </div>

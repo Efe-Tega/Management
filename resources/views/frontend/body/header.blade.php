@@ -24,8 +24,8 @@
                 <!--Logo start-->
                 <div class="col mt-10 mb-10">
                     <div class="logo">
-                        <a href="{{ route('home') }}"><img src="assets/images/logo.png" alt="" width="100px"
-                                height="40px" /></a>
+                        <a href="{{ route('home') }}"><img src="{{ asset('frontend/assets/images/logo.png') }}"
+                                alt="" width="100px" height="80px" /></a>
                     </div>
                 </div>
                 <!--Logo end-->

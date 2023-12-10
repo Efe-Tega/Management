@@ -45,4 +45,14 @@ class HomeNavigateController extends Controller
     {
         return view('frontend.donation');
     }
+
+    public function Book()
+    {
+        return view('frontend.book');
+    }
+
+    public function TestView()
+    {
+        return view('mails.booking_mail');
+    }
 }

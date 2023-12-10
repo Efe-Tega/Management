@@ -9,7 +9,7 @@
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesdesign" name="author" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.ico') }}">
+    <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.png') }}">
 
     <!-- Bootstrap Css -->
     <link href="{{ asset('backend/assets/css/bootstrap.min.css') }}" id="bootstrap-style" rel="stylesheet"
@@ -35,9 +35,9 @@
                     <div class="text-center mt-4">
                         <div class="mb-3">
                             <a href="index.html" class="auth-logo">
-                                <img src="{{ asset('backend/assets/images/logo-dark.png') }}" height="30"
+                                <img src="{{ asset('backend/assets/images/logo-dark.png') }}" height="80"
                                     class="logo-dark mx-auto" alt="">
-                                <img src="{{ asset('backend/assets/images/logo-light.png') }}" height="30"
+                                <img src="{{ asset('backend/assets/images/logo-light.png') }}" height="80"
                                     class="logo-light mx-auto" alt="">
                             </a>
                         </div>
@@ -84,13 +84,13 @@
     <!-- end -->
 
     <!-- JAVASCRIPT -->
-    <script src="assets/libs/jquery/jquery.min.js"></script>
-    <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/libs/metismenu/metisMenu.min.js"></script>
-    <script src="assets/libs/simplebar/simplebar.min.js"></script>
-    <script src="assets/libs/node-waves/waves.min.js"></script>
+    <script src="{{ asset('backend/assets/libs/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/metismenu/metisMenu.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/simplebar/simplebar.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/node-waves/waves.min.js') }}"></script>
 
-    <script src="assets/js/app.js"></script>
+    <script src="{{ asset('backend/assets/js/app.js') }}"></script>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
